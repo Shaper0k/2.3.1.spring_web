@@ -12,10 +12,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-public class UserControllers {
+public class  UserControllers {
 
 
     private final UserService userService;
+
     @Autowired
     public UserControllers(UserService userService) {
         this.userService = userService;
@@ -33,7 +34,8 @@ public class UserControllers {
     public String createUserForm(User user){
         return "user-create";
     }
-    @PostMapping
+
+    @PostMapping("user-create")
     public String createUser(User user) {
         userService.addUser(user);
         return "redirect:/users";

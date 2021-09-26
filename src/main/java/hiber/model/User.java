@@ -2,7 +2,8 @@ package hiber.model;
 
 import javax.persistence.*;
 
-@Entity(name = "users")
+@Entity
+@Table(name = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,8 +12,16 @@ public class User {
     @Column
     private String name;
 
-    @Column(name = "last_name")
-    private String Lastname;
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    @Column
+    private String surname;
 
     @Column
     private int age;
@@ -33,9 +42,9 @@ public class User {
 
     public User() {}
 
-    public User( String name, int age, String email) {
-
+    public User(String name, String surname, int age, String email) {
         this.name = name;
+        this.surname = surname;
         this.age = age;
         this.email = email;
     }

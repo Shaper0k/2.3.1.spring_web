@@ -4,6 +4,7 @@ import hiber.dao.UserDaoImp;
 import hiber.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 
 import java.util.List;
@@ -18,27 +19,27 @@ public class UserServiceImp implements UserService {
         this.userDaoImp = userDaoImp;
     }
 
-    @Override
+    @Transactional
     public void addUser(User user) {
         userDaoImp.addUser(user);
     }
 
-    @Override
+    @Transactional
     public void updateUser(User user) {
         userDaoImp.updateUser(user);
     }
 
-    @Override
+    @Transactional
     public void deleteUser(long id) {
         userDaoImp.deleteUser(id);
     }
 
-    @Override
+    @Transactional
     public List<User> getAllUsers() {
         return userDaoImp.getAllUsers();
     }
 
-    @Override
+    @Transactional
     public User getUser(long id) {
         return userDaoImp.getUser(id);
     }

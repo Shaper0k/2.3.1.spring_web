@@ -1,6 +1,6 @@
 package web.config;
 
-import hiber.config.AppConfig;
+
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 public class AppInit extends AbstractAnnotationConfigDispatcherServletInitializer {
@@ -10,7 +10,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected Class<?>[] getRootConfigClasses() {
         return  new Class<?>[]{
                 WebConfig.class,
-                AppConfig.class
+                JpaConfig.class
         };
     }
 
@@ -20,7 +20,7 @@ public class AppInit extends AbstractAnnotationConfigDispatcherServletInitialize
     protected Class<?>[] getServletConfigClasses() {
         return new Class<?>[]{
                 WebConfig.class,
-                AppConfig.class
+                JpaConfig.class
         };
     }
 
