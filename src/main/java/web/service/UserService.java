@@ -1,11 +1,11 @@
-package hiber.dao;
+package web.service;
 
-import hiber.model.User;
+import web.model.User;
 
-import javax.transaction.Transactional;
+
 import java.util.List;
 
-public interface UserDao {
+public interface UserService {
 
     void addUser(User user);
     void updateUser(User user);
